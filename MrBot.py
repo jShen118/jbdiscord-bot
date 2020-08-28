@@ -202,4 +202,4 @@ async def uc(ctx, quant, bu, au):
         return"""
 
 
-client.run("NzMwMDI3Nzk1NDM4MTA4NzEy.XwRhoQ.lkBOY1Nm83aDuc0ABwOOjUqCBNA")
+client.run("private token")
