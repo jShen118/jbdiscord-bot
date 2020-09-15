@@ -192,6 +192,13 @@ async def quest(ctx):
     await ctx.send(f"Difficulty: {difficulty}\nRewards: {rewards}")
 
 
+@client.command(help = "generates a DnD feat")
+async def feat(ctx):
+    await ctx.send(dnd.feats[random.randint(1, 42) - 1])
+
+@client.command(help = "generates a DnD boon")
+async def boon(ctx):
+    await ctx.send(dnd.boons[random.randint(1, 26) - 1])
 
 """
 import pint
