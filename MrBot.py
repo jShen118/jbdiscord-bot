@@ -188,8 +188,8 @@ async def quest(ctx):
     else:
         rewards += f"{dnd.rewardArray[rIndex][1]} {dnd.rewardArray[rIndex][0]}"
     rewards += "]"
-    await ctx.send(f"Action: {action}\nSpecifics: {dnd.actionDictionary[action][sRoll - 1][0]}")
-    await ctx.send(f"Difficulty: {difficulty}\nRewards: {rewards}")
+    await ctx.send(f"Action: {action}\nSpecifics: {dnd.actionDictionary[action][sRoll - 1][0]}\nDifficulty: {difficulty}\nRewards: {rewards}")
+
 
 
 @client.command(help = "generates a DnD feat")
@@ -199,6 +199,63 @@ async def feat(ctx):
 @client.command(help = "generates a DnD boon")
 async def boon(ctx):
     await ctx.send(dnd.boons[random.randint(1, 26) - 1])
+
+    
+   
+
+@client.command(help="generates a DnD bounty")
+async def bounty(ctx):
+    race = dnd.races[random.randint(1, 16) - 1]
+
+    rankNum = random.randint(1, 200)
+    rank = ""
+    rewardAmount = 0
+    rewardType = ""
+    if 1 <= rankNum <= 85:
+        rank = "F Rank (1-4)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(10))
+        rewardType = "Silver"
+    elif 86 <= rankNum <= 135:
+        rank = "E Rank (5-8)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(20))
+        rewardType = "Silver"
+    elif 136 <= rankNum <= 160:
+        rank = "D Rank (9-10)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(100))
+        rewardType = "Silver"
+    elif 161 <= rankNum <= 180:
+        rank = "C Rank (11-14)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(20))
+        rewardType = "Gold"
+    elif 181 <= rankNum <= 195:
+        rank = "B Rank (15-16)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(10))
+        rewardType = "Platinum"
+    elif 196 <= rankNum <= 199:
+        rank = "A Rank (17-20)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(50))
+        rewardType = "Platinum"
+    else:
+        rank = "S Rank (21+)"
+        rewardAmount = sum(random.randint(1, 100) for _ in range(100))
+        rewardType = "Platinum"
+
+    bclass = dnd.classes[random.randint(1, 12) - 1]
+    specialTrait = ""
+    rewardMultiplier = 1
+    sRoll = random.randint(1, 10)
+    if sRoll == 10:
+        sRoll = random.randint(1, 10)
+        if sRoll == 9: rewardMultiplier = 10
+        if sRoll == 10: rewardMultiplier = 100
+        specialTrait = dnd.specialSpecialTraits[sRoll - 1]
+    else:
+        specialTrait = dnd.specialTraits[sRoll - 1]
+    rewardAmount *= rewardMultiplier
+    "race, rank, description, reward"
+    await ctx.send(f"Race: {race}\nRank: {rank}\nDescription: {bclass}, {specialTrait}\nReward: {rewardAmount} {rewardType}")
+
+
 
 """
 import pint
