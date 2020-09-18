@@ -390,3 +390,63 @@ boons = [
     "Boon of Truesight",
     "Boon of Undetectability"
 ]
+
+races = [
+    "Hill Dwarf",
+    "Mountain Dwarf",
+    "High Elf",
+    "Wood Elf",
+    "Drow",
+    "Lightfoot Halfling",
+    "Stout Halfling",
+    "Human",
+    "Human Variant",
+    "Chromatic Dragonborn",
+    "Metallic Dragonborn",
+    "Forest Gnome",
+    "Rock Gnome",
+    "Half Elf",
+    "Half Orc",
+    "Tiefling",
+]
+
+classes = [
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rouge",
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+]
+
+specialTraits = [
+    "None",
+    "Prime Race (2x)",
+    "5 Feats",
+    "Superior Feat (x5)",
+    "3 Boons",
+    "Superior Boon (x3)",
+    "Prime Class (2x)",
+    "Rare Magic Item",
+    "Very Rare Magic Item"
+]
+
+specialSpecialTraits = [
+    "3 Superior Feats",
+    "2 Superior Boons",
+    "Legendary Class (x3)",
+    "Legendary Item",
+    "Awakened Feat (x10)",
+    "Awakened Boon (x6)",
+    "Legendary Subclass (x5)",
+    "1 Treasure",
+    "High Value",
+    "Highest Value"
+]
+
