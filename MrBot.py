@@ -194,7 +194,7 @@ async def quest(ctx):
 
 @client.command(help = "generates a DnD feat")
 async def feat(ctx):
-    await ctx.send(dnd.feats[random.randint(1, 42) - 1])
+    await ctx.send(dnd.feats[random.randint(1, 57) - 1])
 
 @client.command(help = "generates a DnD boon")
 async def boon(ctx):
@@ -255,7 +255,21 @@ async def bounty(ctx):
     "race, rank, description, reward"
     await ctx.send(f"Race: {race}\nRank: {rank}\nDescription: {bclass}, {specialTrait}\nReward: {rewardAmount} {rewardType}")
 
+@client.command(help="generates a DnD artifact")
+async def artifact(ctx):
+    await ctx.send(dnd.artifacts[random.randint(1, 26) - 1])
 
+@client.command(help="generates a DnD legendary item")
+async def legendaryItem(ctx):
+    await ctx.send(dnd.legendaryItems[random.randint(1, 51) - 1])
+
+@client.command(help="generates a DnD very rare item")
+async def veryRareItem(ctx):
+    await ctx.send(dnd.veryRareItems[random.randint(1, 70) - 1])
+
+@client.command(help="generates a DnD potion")
+async def potion(ctx):
+    await ctx.send(dnd.potions[random.randint(1, 19) - 1])
 
 """
 import pint
